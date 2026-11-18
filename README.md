@@ -1,4 +1,4 @@
-# Alternating reciprocal cubes of Fibonacci and Lucas sequences
+# The alternating sum of reciprocal Fibonacci cubes is irrational
 
 **twinheterodox · 18 November 2026 · Number theory**
 

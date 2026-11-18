@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Please cite the manuscript."
-title: "Alternating reciprocal cubes of Fibonacci and Lucas sequences"
+title: "The alternating sum of reciprocal Fibonacci cubes is irrational"
 type: software
 authors:
   - name: twinheterodox
@@ -8,7 +8,7 @@ repository-code: "https://github.com/twinheterodox/alternating-lucas-cubes"
 license: Apache-2.0
 preferred-citation:
   type: report
-  title: "Alternating reciprocal cubes of Fibonacci and Lucas sequences"
+  title: "The alternating sum of reciprocal Fibonacci cubes is irrational"
   authors:
     - name: twinheterodox
   year: 2026
