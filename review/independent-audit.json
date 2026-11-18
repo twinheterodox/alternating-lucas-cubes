@@ -1,0 +1,17 @@
+{
+  "work": "Alternating reciprocal cubes of Fibonacci and Lucas sequences",
+  "reviewed_version": "Four-page mathematical working proof circulated on 18 November 2026, before the manuscript was prepared.",
+  "audit": "Another AI model independently reviewed mathematical correctness and exposition, consulted the principal mathematical sources, and wrote the exact and numerical check programs supplied here.",
+  "verdict": "No mathematical gap found in the Fibonacci theorem, the stated first-kind Lucas theorem, or the result for every fixed positive stride.",
+  "mathematics": [
+    "Binet’s formula, the Euler differential functional, both determinant estimates, and the formal cyclotomic divisor before specializing at a negative unit.",
+    "The shared conjugate pole function, rational-interpolation nonvanishing argument, and exact norm margin 296/11025."
+  ],
+  "computations": [
+    "Every coefficient in X for K=2,3,4,5 and Q=-1,+1 tested over the rational function field.",
+    "Both real embeddings compared by independent expressions at 165 decimal digits for Fibonacci, Pell, and (P,Q)=(3,1)."
+  ],
+  "exposition": "The manuscript clarifies the conjugate pole identity and supplies distinct primary sources for alternating even powers and odd-index transcendence.",
+  "formal_verification": "The signed theorem received a mathematical and computational audit. The source work's Lean formalization concerns the ordinary theorem. No signed Lean formalization was part of this audit.",
+  "programs": ["formal_checks.py", "signed_checks.py"]
+}

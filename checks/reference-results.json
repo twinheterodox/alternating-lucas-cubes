@@ -1,0 +1,18 @@
+{
+  "formal": [
+    "sieve mean 768/1225, integral 11/8, cost 4393/3675, margin 296/11025",
+    "Q=-1 K=2 degree in X=2, true cyclotomic degree=18, allowed degree=18",
+    "Q=+1 K=2 degree in X=2, true cyclotomic degree=18, allowed degree=18",
+    "Q=-1 K=3 degree in X=3, true cyclotomic degree=47, allowed degree=47",
+    "Q=+1 K=3 degree in X=3, true cyclotomic degree=46, allowed degree=47",
+    "Q=-1 K=4 degree in X=4, true cyclotomic degree=94, allowed degree=95",
+    "Q=+1 K=4 degree in X=4, true cyclotomic degree=93, allowed degree=94",
+    "Q=-1 K=5 degree in X=5, true cyclotomic degree=176, allowed degree=181",
+    "Q=+1 K=5 degree in X=5, true cyclotomic degree=174, allowed degree=179"
+  ],
+  "signed": [
+    "(P,Q)=(1,-1), A=0.09437760414453628404, K=2..5, maximum relative discrepancy 5.51e-151",
+    "(P,Q)=(2,-1), A=0.8824595763648869295, K=2..5, maximum relative discrepancy 3.59e-135",
+    "(P,Q)=(3,+1), A=0.9648138015612037703, K=2..5, maximum relative discrepancy 2.81e-131"
+  ]
+}

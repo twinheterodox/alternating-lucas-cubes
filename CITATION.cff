@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Please cite the manuscript."
+title: "Alternating reciprocal cubes of Fibonacci and Lucas sequences"
+type: software
+authors:
+  - name: twinheterodox
+repository-code: "https://github.com/twinheterodox/alternating-lucas-cubes"
+license: Apache-2.0
+preferred-citation:
+  type: report
+  title: "Alternating reciprocal cubes of Fibonacci and Lucas sequences"
+  authors:
+    - name: twinheterodox
+  year: 2026

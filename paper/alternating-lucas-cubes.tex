@@ -1,0 +1,510 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[left=.95in,right=.95in,top=.89in,bottom=.91in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,microtype}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!40!black,citecolor=blue!40!black,
+  urlcolor=blue!40!black]{hyperref}
+\hypersetup{pdftitle={Alternating reciprocal cubes of Fibonacci and Lucas sequences},
+  pdfauthor={twinheterodox},pdfsubject={Number theory}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\numberwithin{equation}{section}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Ord}{\mathcal O}
+\DeclareMathOperator{\Nm}{N}
+\title{\fontsize{16}{20}\selectfont\mbox{Alternating reciprocal cubes of Fibonacci and Lucas sequences}}
+\author{twinheterodox}
+\date{18 November 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove that the alternating sum of the reciprocal cubes of the Fibonacci numbers
+is irrational. The result extends to the Lucas sequences of the first kind
+associated with real quadratic units greater than one, including the Pell
+numbers. For every such sequence and every fixed positive integer \(k\), the
+alternating sum along the indices \(k,2k,3k,\ldots\) is also irrational.
+\end{abstract}
+
+\section{The alternating sum}
+
+Let \(F_1=F_2=1\) and \(F_{n+2}=F_{n+1}+F_n\). Write
+\[
+ A_F^+=\sum_{n\ge1}\frac{1}{F_n^3},\qquad
+ A_F^-=\sum_{n\ge1}\frac{(-1)^{n-1}}{F_n^3}.
+\]
+Both series converge absolutely. Adding them keeps precisely the odd
+indices. Duverney, Ke.~Nishioka, Ku.~Nishioka and Shiokawa proved that
+\(\sum_{n\ge1}F_{2n-1}^{-3}\) is transcendental
+\cite{DNNS}\cite[Theorem~4, p.~95]{Kyoto}. Consequently at least one of
+\(A_F^+\) and \(A_F^-\) is transcendental. Deciding which sums are
+irrational individually requires more information. Krisman proved the
+irrationality of \(A_F^+\) \cite{KFib} and extended it to ordinary
+reciprocal cube sums of Lucas sequences \cite[Theorem~1.1]{KLucas}.
+His normalization takes the dominant unit to be positive and leaves
+the alternating case open \cite[p.~3]{KLucas}. We treat that case here.
+
+For integers \(P,Q\), let \(U_n=U_n(P,Q)\) be the Lucas sequence of the
+first kind,
+\[
+ U_0=0,\qquad U_1=1,\qquad U_{n+2}=P U_{n+1}-Q U_n.
+\]
+\begin{theorem}\label{thm:main}
+Suppose that \(Q=-1\) and \(P\ge1\), or that \(Q=1\) and \(P\ge3\).
+Then
+\[
+                 A^-_{P,Q}=\sum_{n\ge1}\frac{(-1)^{n-1}}{U_n(P,Q)^3}
+                 \quad\text{is irrational}.
+\]
+\end{theorem}
+\noindent
+The choices \((P,Q)=(1,-1)\) and \((2,-1)\) give the Fibonacci and
+Pell numbers. For \(Q=-1\), Elsner, Shimomura and Shiokawa treat
+alternating reciprocal \emph{even} powers of first- and second-kind
+Lucas sequences \cite[Theorems~2 and~4]{ESS}. Here the power is three.
+
+\begin{corollary}\label{cor:stride}
+Under the hypotheses of Theorem~\ref{thm:main}, for each integer \(k\ge1\),
+\[
+                  \sum_{n\ge1}\frac{(-1)^{n-1}}{U_{kn}(P,Q)^3}
+                  \quad\text{is irrational}.
+\]
+\end{corollary}
+\noindent
+The sign alternates with \(n\), including when \(k\) is even.
+
+The determinant method produces polynomials in a single unknown value.
+Under a rationality assumption, clearing their denominators gives
+algebraic integers in a real quadratic field. A nonzero algebraic
+integer has absolute norm at least one, so estimates at \emph{both}
+real embeddings can yield a contradiction. Zudilin used polynomial
+Hankel determinants in an irrationality criterion
+\cite[Proposition~2]{Zudilin}. Determinants of moments after a rational
+change of weight are studied by Krattenthaler \cite[Theorem~1]{Kratt}.
+The particular moving denominator and interpolation argument used here
+come from the \(q\)-zeta construction \cite[Sections~2 and~5]{QZeta}
+and Krisman's adaptation of it to reciprocal cubes \cite{KFib,KLucas}.
+
+The alternating sign amounts to changing the sign of the small unit in
+Krisman's construction. His cyclotomic denominator is an identity in a
+formal variable, so it still clears every coefficient. The main analytic
+point is at the conjugate embedding. The conjugate pole values turn out
+to be evaluations of a \emph{single} holomorphic function formed from the
+original signed moments. A contour integral combines them before their
+sizes are estimated. In units of \(K^3\log\eta\), where \(K\) is the
+determinant size and \(\eta>1\) is the dominant unit, the two resulting
+savings exceed the cost of clearing by
+\begin{equation}\label{eq:margin}
+                    \frac29+1-\frac{4393}{3675}=\frac{296}{11025}.
+\end{equation}
+We prove the estimates for the actual signed value and show that
+infinitely many of the corresponding determinants are nonzero.
+
+\section{The signed unit and its moments}\label{sec:moments}
+
+Put \(D=P^2-4Q\), \(\eta=(P+\sqrt D)/2\), and \(u=\eta^{-1}\).
+The two roots of \(x^2-Px+Q\) are \(\eta>1\) and \(Q/\eta\).
+They are algebraic units. A rational root would be an integer
+dividing \(Q=\pm1\), so the field \(E=\Q(\sqrt D)\) is quadratic.
+Conversely, the trace of a real quadratic unit \(\eta>1\) of norm
+\(Q\) is the integer \(\eta+Q/\eta\), which is positive for \(Q=-1\)
+and exceeds two for \(Q=1\). This gives exactly the parameter ranges
+in Theorem~\ref{thm:main}. Let \(\sigma\) denote the nontrivial
+automorphism of \(E\) and put
+\[
+     \tau=-u,\qquad w=Q\tau^2,\qquad \rho=Q\tau.
+\]
+Here \(|w|<1\), \(|\rho|<1\), \(w=\rho\tau\), and \(\rho w=\tau^3\).
+The sign of \(\tau\) changes the sign of the geometric weights on
+alternate terms while keeping the nodes \(w^n\) in place. Binet's
+formula gives \(U_n=\eta^n(1-w^n)/\sqrt D\). Thus all the \(U_n\)
+with \(n\ge1\) are positive and
+\begin{equation}\label{eq:period}
+ \psi_N=\frac{\tau^{3N}}{(1-w^N)^3},\qquad
+ S_a=\sum_{N=1}^{a}\psi_N,\qquad \Xi=\sum_{N\ge1}\psi_N,\qquad
+ A^-_{P,Q}=-D\sqrt D\,\Xi.
+\end{equation}
+The infinite series is absolutely convergent. The finite quantities
+satisfy
+\begin{equation}\label{eq:conj}
+ \sigma\tau=Q/\tau,\qquad \sigma w=w^{-1},\qquad
+ \sigma\rho=\tau^{-1},\qquad \sigma\psi_N=-\psi_N .
+\end{equation}
+For the last identity, factor \(-w^{-N}\) out of \(1-w^{-N}\).
+We shall use \(\sigma\Xi=-\Xi\) only under the hypothesis
+\(A^-_{P,Q}=v/m\), \(v\in\Z,\ m\ge1\). In that case
+\begin{equation}\label{eq:rational}
+        mD^2\Xi=-v\sqrt D\in\Ord=\Z[\eta],
+        \qquad \sigma\Xi=-\Xi ,
+\end{equation}
+since \(\sqrt D=2\eta-P\). This argument uses the value
+of the convergent series as a whole.
+
+To produce polynomials in \(\Xi\), we need a functional with two
+kinds of moments. Polynomials will give elements of \(E\), while
+simple poles will recover tails of \(\Xi\). For \(g\) holomorphic on a
+neighborhood of \(|z|\le |w|\), let \(\theta=z\,d/dz\) and set
+\[
+       L(g)=\sum_{n\ge1}\rho^n[\theta(\theta+1)g](w^n).
+\]
+The derivatives of \(g\) are bounded on the indicated disk, so the sum
+converges absolutely. With \(\alpha_j=\rho w^j\), the geometric sum
+and the identity
+\(\theta(\theta+1)(1-cz)^{-1}=2cz/(1-cz)^3\) give
+\begin{align}
+ L(z^j)&=\nu_j=\frac{j(j+1)\alpha_j}{1-\alpha_j}
+               &&(j\ge0),\label{eq:monomials}\\
+ L\big((1-w^az)^{-1}\big)&=2\rho^{-a}(\Xi-S_a)
+               &&(a\ge1).\label{eq:poles}
+\end{align}
+Indeed, in the second identity put \(N=n+a\) and use
+\(w^a\tau^{-3a}=\rho^{-a}\). This is the signed specialization of
+Krisman's moment identities \cite[Section~2]{KLucas}.
+
+For \(K\ge2\) let \(D_K(z)=\prod_{a=1}^K(1-w^a z)\). On rational
+functions of the form \(p/D_K\), define \(L_X\) by ordinary partial
+fractions. Use \eqref{eq:monomials} on the polynomial quotient and
+\eqref{eq:poles} with \(\Xi\) replaced by \(X\) on the simple fractions.
+Set
+\begin{equation}\label{eq:det}
+           \Delta_{K,\tau}(X)
+            =\det_{0\le i,j<K} L_X\big(z^{i+j}/D_K(z)\big).
+\end{equation}
+Each entry is affine in \(X\), hence this polynomial has degree at
+most \(K\). At \(X=\Xi\), all its entries are values of the actual
+functional \(L\). Replacing \(\tau\) in the finite formulas by an
+indeterminate \(T\) defines \(\Delta_{K,T}(X)\in\Q(T)[X]\). This
+formal version will let us use the same denominator at both embeddings.
+
+\section{The denominator and the first embedding}\label{sec:first}
+
+Let \(\Phi_d\) denote the \(d\)th cyclotomic polynomial and \(\varphi\)
+Euler's totient. The arithmetic input to our proof is
+\cite[Proposition~4.4 and the proof of Proposition~4.6]{KLucas}.
+For each fixed \(Q=\pm1\) it supplies finitely supported nonnegative
+integers \(e_{K,d}\) such that
+\begin{align}
+ C_K(T)&=\prod_d\Phi_d(T)^{e_{K,d}},&
+                 C_K(T)\Delta_{K,T}(X)&\in\Z[T,T^{-1}][X],
+                 \label{eq:clearing}\\
+ \sum_d e_{K,d}&=O(K^2\log K),&
+ \sum_d\varphi(d)e_{K,d}&\le\frac{4393}{3675}K^3+O(K^2).
+                 \label{eq:exponents}
+\end{align}
+The weight \(\varphi(d)\) in \eqref{eq:exponents} is the degree of
+\(\Phi_d\). The coefficient \(4393/3675\) comes from adding the
+contribution of colliding poles, at most
+\(\tfrac{11}{8}\prod_{p\le7}(1-p^{-2})\) with the product over primes,
+to the contribution \(1/3\) from monomial moments. Since
+\eqref{eq:clearing} holds before evaluating \(T\), we may substitute
+the negative unit \(\tau\) and its conjugate. Each evaluation has
+coefficients in \(\Ord\).
+
+\begin{lemma}\label{lem:normcost}
+For each of the units in Theorem~\ref{thm:main},
+\[
+ \log|C_K(\tau)C_K(\sigma\tau)|
+     \le \frac{4393}{3675}K^3\log\eta+O(K^2\log K).
+\]
+\end{lemma}
+\begin{proof}
+For \(|x|=u\), the product identity
+\(\Phi_d(x)=\prod_{a\mid d}(x^a-1)^{\mu(d/a)}\) gives
+\[
+ \big|\log|\Phi_d(x)|\big|\le E_u,\qquad
+            E_u=\sum_{a\ge1}-\log(1-u^a)<\infty .
+\]
+Here \(\mu\) is the M\"obius function and
+\(\big|\log|1-x^a|\big|\le-\log(1-u^a)\) for both real signs of \(x\).
+For \(|x|=\eta\), factor \(x^a\) out of \(x^a-1\). The same bound
+applies after subtracting \(\varphi(d)\log\eta\). The error in the
+logarithm of each factor's norm is therefore at most \(2E_u\).
+Sum with weights \(e_{K,d}\) and use \eqref{eq:exponents}.
+\end{proof}
+
+All subsequent error constants may depend on the fixed unit. In
+logarithmic upper bounds a zero determinant has logarithm \(-\infty\).
+\begin{proposition}\label{prop:first}
+At the first real embedding,
+\[
+             \log|\Delta_{K,\tau}(\Xi)|
+                    \le -\frac29 K^3\log\eta+O(K^2).
+\]
+\end{proposition}
+\begin{proof}
+The functional uses derivatives through order two. A polynomial with a
+triple zero at a node contributes zero there, even after multiplication
+by a factor holomorphic at that node. This explains the monic basis
+from \cite[Proposition~3.1]{KLucas},
+\[
+ V_i(z)=\prod_{\ell=1}^i\big(z-w^{\lceil\ell/3\rceil}\big),\qquad
+ R_i=\lceil i/3\rceil,\qquad b_i=\sum_{\ell=1}^i\lceil\ell/3\rceil .
+\]
+Using \(V_i,V_j\) in the rows and columns of \eqref{eq:det} preserves
+the determinant. When \(n<\max(R_i,R_j)\), at least one factor \(V_i\)
+or \(V_j\) has a triple zero at \(w^n\). At every other node, each
+factor \(z-w^b\) at \(z=w^n\) has modulus at most \(2|w|^b\).
+Applying \(\theta\) once or twice to that factor gives \(z\), of
+modulus at most \(|w|^b\). The reciprocal \(1/D_K\) and its first
+two Euler derivatives are bounded uniformly on \(|z|\le|w|\). This
+follows from Cauchy's estimates on the unit circle, where
+\(|D_K(z)|\ge\prod_{a\ge1}(1-|w|^a)>0\).
+
+The product rule and \(\sum_n|\rho|^n<\infty\) now give
+\[
+       |L(V_iV_j/D_K)|
+        \le C(i+j+1)^2\,2^{i+j}|w|^{b_i+b_j}.
+\]
+Extract \(|w|^{b_i}\) and \(|w|^{b_j}\) from the row and column
+bounds. The remaining factors contribute \(O(K^2)\) to the logarithm
+by Hadamard's inequality. As \(b_i=i^2/6+O(i)\), we have
+\(2\sum_{i<K} b_i=K^3/9+O(K^2)\). Finally,
+\(\log|w|=-2\log\eta\), which gives the asserted coefficient.
+\end{proof}
+
+\section{A contour for the conjugate determinant}\label{sec:second}
+
+The conjugate of \(w\) has modulus greater than one. We therefore
+apply \(\sigma\) to the finite moment formulas, keeping \(X\) formal,
+and use their partial fractions to estimate \(\Delta_{K,\sigma\tau}\).
+Denote the resulting functional by \(L_X^\sigma\). Its poles are
+at the \emph{small} points \(r_a=w^a\), because
+\begin{equation}\label{eq:denconj}
+ \sigma D_K(z)=(-1)^K w^{-K(K+1)/2}F_K(z),\qquad
+ F_K(z)=\prod_{a=1}^K(z-r_a).
+\end{equation}
+The scalar in \eqref{eq:denconj} will supply a cubic saving if we can
+bound the moments with denominator \(F_K\).
+
+\begin{lemma}\label{lem:gamma}
+Define \(\Gamma(r)=L_s((1-rs)^{-1})\), with \(L\) acting on the
+variable \(s\). This function is holomorphic on \(|r|<|w|^{-1}\),
+and for \(1\le a\le K\),
+\[
+                   L^\sigma_{-\Xi}\big((z-r_a)^{-1}\big)=\Gamma(r_a).
+\]
+\end{lemma}
+\begin{proof}
+Use \((z-r_a)^{-1}=-r_a^{-1}(1-w^{-a}z)^{-1}\). By
+\eqref{eq:conj} the conjugate of the right side of
+\eqref{eq:poles}, with its period left as the variable \(X\),
+is \(2\tau^a(X+S_a)\). At \(X=-\Xi\) this gives
+\[
+ L^\sigma_{-\Xi}\big((z-r_a)^{-1}\big)
+   =\frac{2\tau^a}{r_a}(\Xi-S_a)
+   =2\rho^{-a}(\Xi-S_a)
+   =L_s\big((1-r_a s)^{-1}\big).
+\]
+The middle equality uses \(r_a=(\rho\tau)^a\). Direct differentiation
+in the original functional gives
+\[
+                 \Gamma(r)=2r\sum_{n\ge1}
+                       \frac{\tau^{3n}}{(1-rw^n)^3},
+\]
+locally uniformly on the indicated disk.
+\end{proof}
+
+\begin{proposition}\label{prop:second}
+At the prescribed value of the conjugate variable,
+\[
+          \log|\Delta_{K,\sigma\tau}(-\Xi)|
+             \le -K^2(K+1)\log\eta+O(K\log K).
+\]
+\end{proposition}
+\begin{proof}
+Write \(Y_j=L^\sigma_{-\Xi}(z^j/F_K(z))\) for \(0\le j\le 2K-2\).
+The simple fractions in this moment have coefficients involving
+\(F'_K(r_a)^{-1}\). Their individual sizes reflect the decreasing
+distances between the poles. By Lemma~\ref{lem:gamma} their sum
+is exactly the single counterclockwise contour integral
+\begin{equation}\label{eq:contour}
+ \sum_{a=1}^K\frac{r_a^j\Gamma(r_a)}{F'_K(r_a)}
+       =\frac{1}{2\pi i}\int_{|z|=1}\frac{z^j\Gamma(z)}{F_K(z)}\,dz .
+\end{equation}
+On this circle \(|F_K(z)|\ge\prod_{a\ge1}(1-|w|^a)>0\), and
+\(\Gamma\) is bounded there. Thus \eqref{eq:contour} is bounded
+independently of \(j,K\). This uses the signed analogue of the
+common pole function in \cite[Proposition~5.1]{KLucas}.
+
+It remains to bound the polynomial quotient when \(j\ge K\).
+On expanding \(1/F_K(z)\) at infinity its coefficients after the
+leading \(z^{-K}\) are \(h_\ell=h_\ell(r_1,\ldots,r_K)\), defined by
+\(\sum_{\ell\ge0}h_\ell t^\ell=\prod_{a=1}^K(1-r_a t)^{-1}\).
+The polynomial quotient is
+\(\sum_{\ell=0}^{j-K}h_\ell z^{j-K-\ell}\), and
+\(\sum_{\ell\ge0}|h_\ell|\le\prod_{a\ge1}(1-|w|^a)^{-1}\).
+Also \(\sigma\alpha_i=Q/\alpha_i\), so
+\(\sigma\nu_i=Q i(i+1)/(\alpha_i-Q)\) is \(O((i+1)^2)\),
+using \(|\alpha_i|\le u<1\). Consequently the entire moment
+\(Y_j\) is \(O((K+1)^2)\).
+
+Returning to \eqref{eq:denconj} multiplies the absolute determinant
+of the \(Y_{i+j}\) by \(|w|^{K^2(K+1)/2}\). Hadamard's inequality
+and \(|w|=\eta^{-2}\) give the result.
+\end{proof}
+
+\section{Nonvanishing at arbitrarily large sizes}\label{sec:nonzero}
+
+For a fixed moment sequence, Kronecker's criterion relates eventual
+vanishing of its Hankel determinants to rationality of its generating
+function \cite[Section~5]{Zudilin}. Here \(D_K\) varies with the
+size. What links consecutive sizes is that all the poles of
+\(1/D_K\) remain poles of \(1/D_{K+1}\). We give the resulting
+rational interpolation argument, following \cite[Proposition~5.1]{QZeta}
+and \cite[Proposition~6.1]{KLucas}, for the actual signed functional.
+
+\begin{proposition}\label{prop:nonzero}
+For arbitrarily large \(K\), one has \(\Delta_{K,\tau}(\Xi)\ne0\).
+\end{proposition}
+\begin{proof}
+The Cauchy transform of \(L\) is holomorphic near infinity and has the
+continuation
+\[
+ \mathcal C(z)=L_s\big((z-s)^{-1}\big)
+          =\sum_{n\ge1}\frac{2\rho^n w^n z}{(z-w^n)^3}.
+\]
+The series converges normally on compact subsets away from the nodes
+and their accumulation point \(0\). Its cubic pole coefficient at
+\(w^n\) is \(2\rho^n w^{2n}\ne0\). It follows that \(\mathcal C\)
+has infinitely many poles and is not rational.
+
+Suppose now that all determinants from some size onward vanish.
+At each such size \(k\), take a nonzero polynomial \(R_k\) of
+degree \(<k\) in the kernel. In particular,
+\(L_s(s^jR_k(s)/D_k(s))=0\) for \(0\le j<k\). Define
+\begin{equation}\label{eq:interp}
+ T_k(z)=L_s\!\left(
+   \frac{R_k(z)D_k(s)-D_k(z)R_k(s)}{(z-s)D_k(s)}
+                      \right),\qquad
+ E_k(z)=\mathcal C(z)R_k(z)-T_k(z).
+\end{equation}
+The numerator in \eqref{eq:interp} vanishes at \(z=s\), so \(T_k\)
+is a polynomial of degree \(<k\). Subtracting in \eqref{eq:interp}
+gives
+\[
+ E_k(z)=D_k(z)L_s\!\left(\frac{R_k(s)}{(z-s)D_k(s)}\right).
+\]
+Thus \(E_k\) vanishes at \(x_a=w^{-a}\), \(1\le a\le k\),
+where the functional on the right is analytic. At infinity expand
+\((z-s)^{-1}\) in powers of \(1/z\). The expansion converges with
+two \(s\)-derivatives on a disk containing the nodes, and the first
+\(k\) terms give zero by the kernel equations. The factor \(D_k(z)\)
+has degree \(k\), so \(E_k(z)=O(1/z)\).
+
+The polynomial
+\[
+          T_{k+1}R_k-T_kR_{k+1}=R_{k+1}E_k-R_kE_{k+1}
+\]
+has degree at most \(k-1\) by its growth at infinity, and has
+the \(k\) common zeros \(x_1,\ldots,x_k\). Hence it vanishes
+identically. All sufficiently large \(k\) therefore give the same
+rational function \(T_k/R_k=T/R\), written in lowest terms.
+There are nonzero polynomials \(V_k\) with \(R_k=V_kR\), \(T_k=V_kT\).
+Since \(\mathcal C\) is not rational, \(E=\mathcal C R-T\) has a
+nonzero leading Laurent term at infinity. From \(V_kE=O(1/z)\),
+the order \(q\) of its zero at infinity is at least one and
+\(\deg V_k\le q-1\). For every sufficiently large \(a\), \(E(x_a)\ne0\)
+since \(|x_a|\to\infty\). Thus \(V_k\) must vanish at every such
+\(x_a\) with \(a\le k\). Their number grows beyond \(q-1\), a
+contradiction.
+\end{proof}
+
+\section{The norm and the fixed-stride sums}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Suppose \(A^-_{P,Q}=v/m\) with \(v\in\Z,\ m\ge1\).
+By \eqref{eq:rational}, \(mD^2\Xi\in\Ord\). The degree bound after
+\eqref{eq:det} and the coefficient clearing in \eqref{eq:clearing}
+show that
+\[
+                y_K=(mD^2)^K C_K(\tau)\Delta_{K,\tau}(\Xi)\in\Ord .
+\]
+No cyclotomic factor vanishes at \(\tau\), since \(|\tau|<1\).
+By Proposition~\ref{prop:nonzero} we can choose arbitrarily large
+\(K\) with \(y_K\ne0\). For these indices \(\Nm_{E/\Q}(y_K)\)
+is a nonzero integer. In its conjugate factor the period is
+\(-\Xi\) by \eqref{eq:rational}. Lemma~\ref{lem:normcost} and
+Propositions~\ref{prop:first} and~\ref{prop:second} give
+\[
+ 0\le \log|\Nm_{E/\Q}(y_K)|
+ \le -\frac{296}{11025}K^3\log\eta
+                  +O(K^2\log K)+2K\log(mD^2),
+\]
+by \eqref{eq:margin}. The right-hand side tends to \(-\infty\)
+because \(\eta>1\) and \(m,D\) are fixed. This proves irrationality.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:stride}]
+Write \(\bar\eta=Q/\eta\) and \(P_k=\eta^k+\bar\eta^k\). This is an
+integer, by the recurrence for the traces of the powers of \(\eta\).
+Binet's formula gives
+\[
+                    U_{kn}(P,Q)=U_k(P,Q)\,U_n(P_k,Q^k).
+\]
+If \(Q^k=1\), then \(P_k=\eta^k+\eta^{-k}>2\). If \(Q^k=-1\),
+then \(P_k=\eta^k-\eta^{-k}>0\). Thus the new pair is admissible.
+Apply Theorem~\ref{thm:main} and divide by the nonzero integer \(U_k^3\).
+\end{proof}
+
+The recurrence also gives \(U_n(-P,Q)=(-1)^{n-1}U_n(P,Q)\).
+Consequently Theorem~\ref{thm:main} may equivalently be read as an
+irrationality statement for ordinary reciprocal cube sums at negative
+trace.
+
+\section*{Verification}
+Another AI model independently audited the mathematics and exposition of
+the 18 November 2026 working proof, including the fixed-stride result.
+Its exact checks of \eqref{eq:clearing} at sizes \(2\) through \(5\)
+for both signs of \(Q\), and its numerical checks at both embeddings for
+Fibonacci, Pell and \((P,Q)=(3,1)\), accompany the source
+\cite{checks}.
+
+\begin{thebibliography}{9}
+\bibitem{DNNS}
+D.~Duverney, Ke.~Nishioka, Ku.~Nishioka and I.~Shiokawa,
+Transcendence of Rogers--Ramanujan continued fraction and reciprocal
+sums of Fibonacci numbers, \emph{Proc.\ Japan Acad.\ Ser.~A Math.\
+Sci.} \textbf{73} (1997), 140--142.
+\href{https://doi.org/10.3792/pjaa.73.140}{doi:10.3792/pjaa.73.140}.
+\bibitem{Kyoto}
+D.~Duverney, Ke.~Nishioka, Ku.~Nishioka and I.~Shiokawa,
+Transcendence of Rogers--Ramanujan continued fraction and reciprocal
+sums of Fibonacci numbers, \emph{RIMS K\^oky\^uroku} \textbf{1060}
+(1998), 91--100. \href{https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/1060-10.pdf\#page=5}{Theorem~4, p.~95}.
+\bibitem{ESS}
+C.~Elsner, S.~Shimomura and I.~Shiokawa, Algebraic relations for
+reciprocal sums of Fibonacci numbers, \emph{Acta Arith.}
+\textbf{130} (2007), 37--60.
+\href{https://doi.org/10.4064/aa130-1-3}{doi:10.4064/aa130-1-3}.
+\bibitem{KFib}
+S.~Krisman, The sum of the reciprocal cubes of the Fibonacci numbers
+is irrational, \href{https://hexagonmath.org/2611.00473v1}{Hexagon 2611.00473v1} (2026).
+\bibitem{KLucas}
+S.~Krisman, The reciprocal cube sums of Lucas sequences of quadratic
+units are irrational, \href{https://hexagonmath.org/2611.00491v1}{Hexagon 2611.00491v1} (2026).
+\bibitem{Zudilin}
+W.~Zudilin, A determinantal approach to irrationality,
+\emph{Constr.\ Approx.} \textbf{45} (2017), 301--310.
+\href{https://doi.org/10.1007/s00365-016-9333-7}{doi:10.1007/s00365-016-9333-7}.
+\bibitem{Kratt}
+C.~Krattenthaler, A determinant identity for moments of orthogonal
+polynomials that implies Uvarov's formula for the orthogonal
+polynomials of rationally related densities,
+\href{https://arxiv.org/abs/2103.03969}{arXiv:2103.03969} (2021).
+\bibitem{QZeta}
+uplift-universal-inc, Irrationality of the Lambert-series value
+\(\zeta_{1/p}(3)\), research draft (2026).
+\href{https://github.com/uplift-universal-inc/qzeta_3-irrationality}{Manuscript and accompanying sources}.
+\bibitem{checks}
+twinheterodox, Verification programs accompanying \emph{Alternating
+reciprocal cubes of Fibonacci and Lucas sequences} (2026).
+Included with the source as electronic supplementary material.
+\href{https://github.com/twinheterodox/alternating-lucas-cubes}{Project repository address}.
+\end{thebibliography}
+\end{document}
