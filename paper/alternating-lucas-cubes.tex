@@ -29,7 +29,8 @@ We prove that the alternating sum of the reciprocal cubes of the Fibonacci numbe
 is irrational. The result extends to the Lucas sequences of the first kind
 associated with real quadratic units greater than one, including the Pell
 numbers. For every such sequence and every fixed positive integer \(k\), the
-alternating sum along the indices \(k,2k,3k,\ldots\) is also irrational.
+reciprocal cubes with indices \(k,2k,3k,\ldots\), taken with signs
+\(+,-,+,\ldots\), also have an irrational sum.
 \end{abstract}
 
 \section{The alternating sum}
@@ -39,16 +40,14 @@ Let \(F_1=F_2=1\) and \(F_{n+2}=F_{n+1}+F_n\). Write
  A_F^+=\sum_{n\ge1}\frac{1}{F_n^3},\qquad
  A_F^-=\sum_{n\ge1}\frac{(-1)^{n-1}}{F_n^3}.
 \]
-Both series converge absolutely. Adding them keeps precisely the odd
-indices. Duverney, Ke.~Nishioka, Ku.~Nishioka and Shiokawa proved that
-\(\sum_{n\ge1}F_{2n-1}^{-3}\) is transcendental
-\cite{DNNS}\cite[Theorem~4, p.~95]{Kyoto}. Consequently at least one of
-\(A_F^+\) and \(A_F^-\) is transcendental. Deciding which sums are
-irrational individually requires more information. Krisman proved the
-irrationality of \(A_F^+\) \cite{KFib} and extended it to ordinary
-reciprocal cube sums of Lucas sequences \cite[Theorem~1.1]{KLucas}.
-His normalization takes the dominant unit to be positive and leaves
-the alternating case open \cite[p.~3]{KLucas}. We treat that case here.
+Absolute convergence gives \(A_F^++A_F^-=2\sum_{n\ge1}F_{2n-1}^{-3}\).
+Duverney, Ke.~Nishioka, Ku.~Nishioka and Shiokawa proved that the
+odd-index sum is transcendental \cite{DNNS}\cite[Theorem~4, p.~95]{Kyoto}.
+Thus at least one of \(A_F^+\) and \(A_F^-\) is transcendental.
+Krisman proved \(A_F^+\) irrational \cite{KFib} and extended that
+result to ordinary reciprocal cube sums of Lucas sequences with a
+positive dominant unit \cite[Theorem~1.1]{KLucas}. These results
+leave open whether \(A_F^-\) is rational \cite[p.~3]{KLucas}.
 
 For integers \(P,Q\), let \(U_n=U_n(P,Q)\) be the Lucas sequence of the
 first kind,
@@ -64,8 +63,16 @@ Then
 \]
 \end{theorem}
 \noindent
-The choices \((P,Q)=(1,-1)\) and \((2,-1)\) give the Fibonacci and
-Pell numbers. For \(Q=-1\), Elsner, Shimomura and Shiokawa treat
+Changing the sign of the trace gives, directly from the recurrence,
+\[
+   U_n(-P,Q)=(-1)^{n-1}U_n(P,Q)\qquad(n\ge1).
+\]
+Cubing preserves this sign. Thus \(A^-_{P,Q}\) is the ordinary
+reciprocal cube sum for trace \(-P\). In the Fibonacci case
+\((P,Q)=(1,-1)\), the negative-trace sequence begins \(1,-1,2,-3,5,\ldots\).
+Its dominant root is negative, explaining the signed reciprocal root
+in Section~\ref{sec:moments}. The pair \((2,-1)\) gives the Pell case.
+For \(Q=-1\), Elsner, Shimomura and Shiokawa treat
 alternating reciprocal \emph{even} powers of first- and second-kind
 Lucas sequences \cite[Theorems~2 and~4]{ESS}. Here the power is three.
 
@@ -76,17 +83,16 @@ Under the hypotheses of Theorem~\ref{thm:main}, for each integer \(k\ge1\),
                   \quad\text{is irrational}.
 \]
 \end{corollary}
-\noindent
-The sign alternates with \(n\), including when \(k\) is even.
-
 The determinant method produces polynomials in a single unknown value.
 Under a rationality assumption, clearing their denominators gives
 algebraic integers in a real quadratic field. A nonzero algebraic
 integer has absolute norm at least one, so estimates at \emph{both}
 real embeddings can yield a contradiction. Zudilin used polynomial
 Hankel determinants in an irrationality criterion
-\cite[Proposition~2]{Zudilin}. Determinants of moments after a rational
-change of weight are studied by Krattenthaler \cite[Theorem~1]{Kratt}.
+\cite[Proposition~2]{Zudilin}. Uvarov related the orthogonal polynomials
+before and after a rational change of weight \cite[\S1]{Uvarov}.
+Krattenthaler gave a determinant identity for the modified moments
+\cite[Theorem~1]{Kratt}.
 The particular moving denominator and interpolation argument used here
 come from the \(q\)-zeta construction \cite[Sections~2 and~5]{QZeta}
 and Krisman's adaptation of it to reciprocal cubes \cite{KFib,KLucas}.
@@ -97,9 +103,10 @@ formal variable, so it still clears every coefficient. The main analytic
 point is at the conjugate embedding. The conjugate pole values turn out
 to be evaluations of a \emph{single} holomorphic function formed from the
 original signed moments. A contour integral combines them before their
-sizes are estimated. In units of \(K^3\log\eta\), where \(K\) is the
-determinant size and \(\eta>1\) is the dominant unit, the two resulting
-savings exceed the cost of clearing by
+sizes are estimated. For a determinant of size \(K\), measure logarithms
+in units of \(K^3\log\eta\), where \(\eta>1\) is the dominant unit.
+The first embedding saves \(2/9\), the conjugate embedding saves \(1\),
+and clearing the denominators costs at most \(4393/3675\). The margin is
 \begin{equation}\label{eq:margin}
                     \frac29+1-\frac{4393}{3675}=\frac{296}{11025}.
 \end{equation}
@@ -121,8 +128,8 @@ automorphism of \(E\) and put
      \tau=-u,\qquad w=Q\tau^2,\qquad \rho=Q\tau.
 \]
 Here \(|w|<1\), \(|\rho|<1\), \(w=\rho\tau\), and \(\rho w=\tau^3\).
-The sign of \(\tau\) changes the sign of the geometric weights on
-alternate terms while keeping the nodes \(w^n\) in place. Binet's
+Changing \(\tau\) from \(u\) to \(-u\) fixes the nodes \(w^n\) and
+multiplies the weights \(\rho^n\) by \((-1)^n\). Binet's
 formula gives \(U_n=\eta^n(1-w^n)/\sqrt D\). Thus all the \(U_n\)
 with \(n\ge1\) are positive and
 \begin{equation}\label{eq:period}
@@ -130,7 +137,9 @@ with \(n\ge1\) are positive and
  S_a=\sum_{N=1}^{a}\psi_N,\qquad \Xi=\sum_{N\ge1}\psi_N,\qquad
  A^-_{P,Q}=-D\sqrt D\,\Xi.
 \end{equation}
-The infinite series is absolutely convergent. The finite quantities
+Here \(\tau^{3N}=(-1)^N\eta^{-3N}\), which accounts for the minus sign
+in the formula for \(A^-_{P,Q}\). The series is absolutely convergent.
+The finite quantities
 satisfy
 \begin{equation}\label{eq:conj}
  \sigma\tau=Q/\tau,\qquad \sigma w=w^{-1},\qquad
@@ -146,17 +155,18 @@ We shall use \(\sigma\Xi=-\Xi\) only under the hypothesis
 since \(\sqrt D=2\eta-P\). This argument uses the value
 of the convergent series as a whole.
 
-To produce polynomials in \(\Xi\), we need a functional with two
-kinds of moments. Polynomials will give elements of \(E\), while
-simple poles will recover tails of \(\Xi\). For \(g\) holomorphic on a
-neighborhood of \(|z|\le |w|\), let \(\theta=z\,d/dz\) and set
+We want polynomial moments in \(E\) and simple-pole moments that recover
+tails of \(\Xi\). The Euler operator \(\theta=z\,d/dz\) supplies the
+cubed denominator in \eqref{eq:period} through the identity
+\(\theta(\theta+1)(1-cz)^{-1}=2cz/(1-cz)^3\).
+At the node \(w^n\), weighting the numerator by \(\rho^n\) supplies
+\((\rho w)^n=\tau^{3n}\). Thus for \(g\) holomorphic on a
+neighborhood of \(|z|\le |w|\), set
 \[
        L(g)=\sum_{n\ge1}\rho^n[\theta(\theta+1)g](w^n).
 \]
 The derivatives of \(g\) are bounded on the indicated disk, so the sum
-converges absolutely. With \(\alpha_j=\rho w^j\), the geometric sum
-and the identity
-\(\theta(\theta+1)(1-cz)^{-1}=2cz/(1-cz)^3\) give
+converges absolutely. With \(\alpha_j=\rho w^j\), summing gives
 \begin{align}
  L(z^j)&=\nu_j=\frac{j(j+1)\alpha_j}{1-\alpha_j}
                &&(j\ge0),\label{eq:monomials}\\
@@ -204,7 +214,9 @@ contribution of colliding poles, at most
 to the contribution \(1/3\) from monomial moments. Since
 \eqref{eq:clearing} holds before evaluating \(T\), we may substitute
 the negative unit \(\tau\) and its conjugate. Each evaluation has
-coefficients in \(\Ord\).
+coefficients in \(\Ord\). The accompanying programs check
+\eqref{eq:clearing} coefficientwise for \(2\le K\le5\) and both
+signs of \(Q\) \cite{checks}.
 
 \begin{lemma}\label{lem:normcost}
 For each of the units in Theorem~\ref{thm:main},
@@ -273,14 +285,17 @@ by Hadamard's inequality. As \(b_i=i^2/6+O(i)\), we have
 The conjugate of \(w\) has modulus greater than one. We therefore
 apply \(\sigma\) to the finite moment formulas, keeping \(X\) formal,
 and use their partial fractions to estimate \(\Delta_{K,\sigma\tau}\).
-Denote the resulting functional by \(L_X^\sigma\). Its poles are
-at the \emph{small} points \(r_a=w^a\), because
+Denote the resulting functional by \(L_X^\sigma\). The conjugated
+denominator vanishes at the points \(r_a=w^a\) inside the unit circle.
+Indeed,
 \begin{equation}\label{eq:denconj}
  \sigma D_K(z)=(-1)^K w^{-K(K+1)/2}F_K(z),\qquad
  F_K(z)=\prod_{a=1}^K(z-r_a).
 \end{equation}
-The scalar in \eqref{eq:denconj} will supply a cubic saving if we can
-bound the moments with denominator \(F_K\).
+Passing to the reciprocal denominator gives a factor of absolute
+value \(|w|^{K(K+1)/2}\) in each entry. Extracting it from every row
+will give a cubic saving in the logarithm, provided the remaining
+moments with denominator \(F_K\) are small enough.
 
 \begin{lemma}\label{lem:gamma}
 Define \(\Gamma(r)=L_s((1-rs)^{-1})\), with \(L\) acting on the
@@ -293,7 +308,7 @@ and for \(1\le a\le K\),
 \begin{proof}
 Use \((z-r_a)^{-1}=-r_a^{-1}(1-w^{-a}z)^{-1}\). By
 \eqref{eq:conj} the conjugate of the right side of
-\eqref{eq:poles}, with its period left as the variable \(X\),
+\eqref{eq:poles}, with \(\Xi\) replaced by the indeterminate \(X\),
 is \(2\tau^a(X+S_a)\). At \(X=-\Xi\) this gives
 \[
  L^\sigma_{-\Xi}\big((z-r_a)^{-1}\big)
@@ -310,6 +325,18 @@ in the original functional gives
 locally uniformly on the indicated disk.
 \end{proof}
 
+Take \(K=2\) and \(j=0\), so the rational function is \(1/F_2\),
+with poles \(r_1=w\) and \(r_2=w^2\). By Lemma~\ref{lem:gamma} the
+two simple fractions contribute
+\[
+  \frac{\Gamma(r_1)}{r_1-r_2}+\frac{\Gamma(r_2)}{r_2-r_1}
+     =\frac{\Gamma(r_1)-\Gamma(r_2)}{r_1-r_2}.
+\]
+For a fixed holomorphic \(\Gamma\), this divided difference tends to
+\(\Gamma'(r_1)\) as \(r_2\to r_1\). Estimating the two fractions
+separately loses that cancellation. For \(K\) nodes, a single contour
+will combine all the pole contributions as the nodes accumulate at zero.
+
 \begin{proposition}\label{prop:second}
 At the prescribed value of the conjugate variable,
 \[
@@ -319,10 +346,8 @@ At the prescribed value of the conjugate variable,
 \end{proposition}
 \begin{proof}
 Write \(Y_j=L^\sigma_{-\Xi}(z^j/F_K(z))\) for \(0\le j\le 2K-2\).
-The simple fractions in this moment have coefficients involving
-\(F'_K(r_a)^{-1}\). Their individual sizes reflect the decreasing
-distances between the poles. By Lemma~\ref{lem:gamma} their sum
-is exactly the single counterclockwise contour integral
+By Lemma~\ref{lem:gamma} and the residue theorem, the contribution
+from the simple fractions is the counterclockwise contour integral
 \begin{equation}\label{eq:contour}
  \sum_{a=1}^K\frac{r_a^j\Gamma(r_a)}{F'_K(r_a)}
        =\frac{1}{2\pi i}\int_{|z|=1}\frac{z^j\Gamma(z)}{F_K(z)}\,dz .
@@ -351,11 +376,23 @@ and \(|w|=\eta^{-2}\) give the result.
 
 \section{Nonvanishing at arbitrarily large sizes}\label{sec:nonzero}
 
-For a fixed moment sequence, Kronecker's criterion relates eventual
-vanishing of its Hankel determinants to rationality of its generating
-function \cite[Section~5]{Zudilin}. Here \(D_K\) varies with the
-size. What links consecutive sizes is that all the poles of
-\(1/D_K\) remain poles of \(1/D_{K+1}\). We give the resulting
+The Cauchy transform of \(L\) is the function from
+Lemma~\ref{lem:gamma} in a reciprocal variable. For \(|z|>|w|\),
+\[
+  \mathcal C(z)=L_s\big((z-s)^{-1}\big)
+       =\frac{1}{z}L_s\big((1-s/z)^{-1}\big)
+       =\frac{\Gamma(1/z)}{z}.
+\]
+The points \(r_a=w^a\) of Section~\ref{sec:second} correspond to
+\(x_a=w^{-a}\). These exterior points are the zeros of \(D_K\)
+for \(1\le a\le K\), and \(|x_a|\to\infty\).
+
+Kronecker proved that the generating function of a fixed moment sequence
+is rational exactly when its Hankel determinants eventually vanish
+\cite[Arts.~VII and~IX]{Kronecker}. Zudilin recalls this criterion in
+the irrationality setting \cite[Section~5]{Zudilin}. Here the moments
+change with \(K\), but every zero of \(D_K\) is also a zero of \(D_{K+1}\).
+We use these shared points in a
 rational interpolation argument, following \cite[Proposition~5.1]{QZeta}
 and \cite[Proposition~6.1]{KLucas}, for the actual signed functional.
 
@@ -363,11 +400,9 @@ and \cite[Proposition~6.1]{KLucas}, for the actual signed functional.
 For arbitrarily large \(K\), one has \(\Delta_{K,\tau}(\Xi)\ne0\).
 \end{proposition}
 \begin{proof}
-The Cauchy transform of \(L\) is holomorphic near infinity and has the
-continuation
+The series for \(\Gamma\) in Lemma~\ref{lem:gamma} gives the continuation
 \[
- \mathcal C(z)=L_s\big((z-s)^{-1}\big)
-          =\sum_{n\ge1}\frac{2\rho^n w^n z}{(z-w^n)^3}.
+ \mathcal C(z)=\sum_{n\ge1}\frac{2\rho^n w^n z}{(z-w^n)^3}.
 \]
 The series converges normally on compact subsets away from the nodes
 and their accumulation point \(0\). Its cubic pole coefficient at
@@ -376,8 +411,13 @@ has infinitely many poles and is not rational.
 
 Suppose now that all determinants from some size onward vanish.
 At each such size \(k\), take a nonzero polynomial \(R_k\) of
-degree \(<k\) in the kernel. In particular,
-\(L_s(s^jR_k(s)/D_k(s))=0\) for \(0\le j<k\). Define
+degree \(<k\) in the kernel. Thus
+\(L_s(s^jR_k(s)/D_k(s))=0\) for \(0\le j<k\).
+We seek a polynomial \(T_k\) such that the error
+\(\mathcal C R_k-T_k\) vanishes at \(x_1,\ldots,x_k\) and is
+\(O(1/z)\) at infinity. Consecutive sizes share the first \(k\)
+points. With this decay those shared zeros will force
+\(T_k/R_k=T_{k+1}/R_{k+1}\). To obtain both properties, set
 \begin{equation}\label{eq:interp}
  T_k(z)=L_s\!\left(
    \frac{R_k(z)D_k(s)-D_k(z)R_k(s)}{(z-s)D_k(s)}
@@ -390,7 +430,7 @@ gives
 \[
  E_k(z)=D_k(z)L_s\!\left(\frac{R_k(s)}{(z-s)D_k(s)}\right).
 \]
-Thus \(E_k\) vanishes at \(x_a=w^{-a}\), \(1\le a\le k\),
+Thus \(E_k\) vanishes at \(x_a\), \(1\le a\le k\),
 where the functional on the right is analytic. At infinity expand
 \((z-s)^{-1}\) in powers of \(1/z\). The expansion converges with
 two \(s\)-derivatives on a disk containing the nodes, and the first
@@ -405,16 +445,19 @@ has degree at most \(k-1\) by its growth at infinity, and has
 the \(k\) common zeros \(x_1,\ldots,x_k\). Hence it vanishes
 identically. All sufficiently large \(k\) therefore give the same
 rational function \(T_k/R_k=T/R\), written in lowest terms.
-There are nonzero polynomials \(V_k\) with \(R_k=V_kR\), \(T_k=V_kT\).
-Since \(\mathcal C\) is not rational, \(E=\mathcal C R-T\) has a
-nonzero leading Laurent term at infinity. From \(V_kE=O(1/z)\),
-the order \(q\) of its zero at infinity is at least one and
-\(\deg V_k\le q-1\). For every sufficiently large \(a\), \(E(x_a)\ne0\)
-since \(|x_a|\to\infty\). Thus \(V_k\) must vanish at every such
-\(x_a\) with \(a\le k\). Their number grows beyond \(q-1\), a
-contradiction.
+Write \(R_k=V_kR\), \(T_k=V_kT\) with \(V_k\) a nonzero polynomial.
+At a zero of \(V_k\), cancelling this common factor can lose an
+interpolation condition. The decay at infinity bounds how many can
+be lost. Indeed, the fixed error \(E=\mathcal C R-T\) is nonzero since
+\(\mathcal C\) is not rational. Write \(E(z)\sim c z^{-q}\) at
+infinity, with \(c\ne0\). As \(E_k=V_kE=O(1/z)\), we have
+\(\deg V_k\le q-1\). But \(E(x_a)\ne0\) for all sufficiently large
+\(a\), since \(|x_a|\to\infty\). Every such \(x_a\) with \(a\le k\)
+must be a zero of \(V_k\). Their number eventually exceeds the fixed
+bound \(q-1\), a contradiction.
 \end{proof}
 
+\newpage
 \section{The norm and the fixed-stride sums}
 
 \begin{proof}[Proof of Theorem~\ref{thm:main}]
@@ -428,9 +471,16 @@ show that
 No cyclotomic factor vanishes at \(\tau\), since \(|\tau|<1\).
 By Proposition~\ref{prop:nonzero} we can choose arbitrarily large
 \(K\) with \(y_K\ne0\). For these indices \(\Nm_{E/\Q}(y_K)\)
-is a nonzero integer. In its conjugate factor the period is
-\(-\Xi\) by \eqref{eq:rational}. Lemma~\ref{lem:normcost} and
-Propositions~\ref{prop:first} and~\ref{prop:second} give
+is a nonzero integer. Under our rationality assumption
+\(\sigma\Xi=-\Xi\) by \eqref{eq:rational}, so its absolute value is
+\[
+ |\Nm_{E/\Q}(y_K)|=(mD^2)^{2K}
+ |C_K(\tau)C_K(\sigma\tau)|\,
+ |\Delta_{K,\tau}(\Xi)|\,|\Delta_{K,\sigma\tau}(-\Xi)|.
+\]
+The first factor contributes only \(2K\log(mD^2)\) to the logarithm.
+For the other three factors use Lemma~\ref{lem:normcost} and
+Propositions~\ref{prop:first} and~\ref{prop:second}, respectively. This gives
 \[
  0\le \log|\Nm_{E/\Q}(y_K)|
  \le -\frac{296}{11025}K^3\log\eta
@@ -450,22 +500,18 @@ Binet's formula gives
 If \(Q^k=1\), then \(P_k=\eta^k+\eta^{-k}>2\). If \(Q^k=-1\),
 then \(P_k=\eta^k-\eta^{-k}>0\). Thus the new pair is admissible.
 Apply Theorem~\ref{thm:main} and divide by the nonzero integer \(U_k^3\).
+For Fibonacci, \(U_2(1,-1)=1\) and \(P_2=3\), so \(F_{2n}=U_n(3,1)\).
+This gives the irrational sum \(F_2^{-3}-F_4^{-3}+F_6^{-3}-\cdots\).
 \end{proof}
-
-The recurrence also gives \(U_n(-P,Q)=(-1)^{n-1}U_n(P,Q)\).
-Consequently Theorem~\ref{thm:main} may equivalently be read as an
-irrationality statement for ordinary reciprocal cube sums at negative
-trace.
 
 \section*{Verification}
 Another AI model independently audited the mathematics and exposition of
 the 18 November 2026 working proof, including the fixed-stride result.
-Its exact checks of \eqref{eq:clearing} at sizes \(2\) through \(5\)
-for both signs of \(Q\), and its numerical checks at both embeddings for
-Fibonacci, Pell and \((P,Q)=(3,1)\), accompany the source
-\cite{checks}.
+Two independent reviews subsequently examined the exposition of the
+seven-page manuscript of the same date.
 
-\begin{thebibliography}{9}
+\clearpage
+\begin{thebibliography}{99}
 \bibitem{DNNS}
 D.~Duverney, Ke.~Nishioka, Ku.~Nishioka and I.~Shiokawa,
 Transcendence of Rogers--Ramanujan continued fraction and reciprocal
@@ -492,11 +538,21 @@ units are irrational, \href{https://hexagonmath.org/2611.00491v1}{Hexagon 2611.0
 W.~Zudilin, A determinantal approach to irrationality,
 \emph{Constr.\ Approx.} \textbf{45} (2017), 301--310.
 \href{https://doi.org/10.1007/s00365-016-9333-7}{doi:10.1007/s00365-016-9333-7}.
+\bibitem{Uvarov}
+V.~B.~Uvarov, The connection between systems of polynomials orthogonal
+with respect to different distribution functions,
+\emph{USSR Comput.\ Math.\ Math.\ Phys.} \textbf{9} (1969), no.~6, 25--36.
+\href{https://doi.org/10.1016/0041-5553(69)90124-4}{doi:10.1016/0041-5553(69)90124-4}.
 \bibitem{Kratt}
 C.~Krattenthaler, A determinant identity for moments of orthogonal
 polynomials that implies Uvarov's formula for the orthogonal
 polynomials of rationally related densities,
 \href{https://arxiv.org/abs/2103.03969}{arXiv:2103.03969} (2021).
+\bibitem{Kronecker}
+L.~Kronecker, Zur Theorie der Elimination einer Variabeln aus zwei
+algebraischen Gleichungen, \emph{Monatsber.\ K\"onigl.\ Preuss.\
+Akad.\ Wiss.\ Berlin} (1881), 535--600.
+\href{https://www.e-rara.ch/download/pdf/5761162.pdf\#page=42}{Art.~IX in the collected works}.
 \bibitem{QZeta}
 uplift-universal-inc, Irrationality of the Lambert-series value
 \(\zeta_{1/p}(3)\), research draft (2026).

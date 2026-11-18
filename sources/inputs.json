@@ -24,6 +24,17 @@
       "source": "Christian Krattenthaler, A determinant identity for moments of orthogonal polynomials that implies Uvarov’s formula for the orthogonal polynomials of rationally related densities, arXiv:2103.03969v1 (2021)",
       "url": "https://arxiv.org/abs/2103.03969v1",
       "use": "Theorem 1 as an antecedent for Hankel determinants of rationally modified moments."
+    },
+    {
+      "source": "V. B. Uvarov, The connection between systems of polynomials orthogonal with respect to different distribution functions, USSR Computational Mathematics and Mathematical Physics 9 (1969), no. 6, 25–36.",
+      "url": "https://doi.org/10.1016/0041-5553(69)90124-4",
+      "original": "https://www.mathnet.ru/eng/zvmmf7099",
+      "use": "Section 1 of the Russian original relates orthogonal polynomials for measures that differ by a rational factor. This is the classical change of weight behind Krattenthaler’s determinant identity."
+    },
+    {
+      "source": "Leopold Kronecker, Zur Theorie der Elimination einer Variabeln aus zwei algebraischen Gleichungen, Monatsberichte der Königlich Preussischen Akademie der Wissenschaften zu Berlin (1881), 535–600.",
+      "url": "https://www.e-rara.ch/download/pdf/5761162.pdf#page=42",
+      "use": "Article VII develops the recurrence criterion. Article IX, pp. 153–154 in the collected-works reprint, identifies rational Laurent series with eventual vanishing of the principal Hankel determinants for a fixed moment sequence. Section 5 of the manuscript uses consecutive interpolation problems for its varying denominators."
     }
   ],
   "literature_comparisons": [

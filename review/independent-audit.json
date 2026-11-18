@@ -12,6 +12,11 @@
     "Both real embeddings compared by independent expressions at 165 decimal digits for Fibonacci, Pell, and (P,Q)=(3,1)."
   ],
   "exposition": "The manuscript clarifies the conjugate pole identity and supplies distinct primary sources for alternating even powers and odd-index transcendence.",
+  "subsequent_exposition_reviews": {
+    "reviewed_version": "Seven-page manuscript with the result in its title, 18 November 2026, before the exposition revision.",
+    "scope": "Two independent reviews addressed readability for a number theorist encountering the construction. Both identified the two-pole cancellation, the change from the pole function to its Cauchy transform, and the interpretation at negative trace.",
+    "revision": "The revised manuscript works out the two-pole case before the contour estimate, motivates the interpolation error, exhibits the factors of the norm, and specifies the fixed-stride signs in the abstract."
+  },
   "formal_verification": "The signed theorem received a mathematical and computational audit. The source work's Lean formalization concerns the ordinary theorem. No signed Lean formalization was part of this audit.",
   "programs": ["formal_checks.py", "signed_checks.py"]
 }
